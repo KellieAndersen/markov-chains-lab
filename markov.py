@@ -39,32 +39,12 @@ def make_chains(text_string):
         >>> chains[('there','juanita')]
         [None]
     """
-
+    chains = {}
+    
     words = contents.split()
 
-    key_pairs = []
-
-    for i in range(len(words)-1):
-        key_pairs.append((words[i], words[i + 1]))
-        #print(key_pairs.append((words[i], words[i + 1])))
-
-    key_pairs_set = set(key_pairs)
-
-    key_values = []
-
-    for i in range(len(words)-1):
-        #if (words[i], words[i+1]) in key_pairs_set:
-        #key_values.append(words(i+2))
-
-        #key_values == words - first two words.
-
-    
-    chains = {}
-    #for key in key_pairs_set:
-
-    #    chains[key] = [key_values].append(words[i+2])
-
-    # your code goes here
+    for i in range(len(words)-2):
+    chains[(words[i], words[i+1])] = chains.get((words[i], words[i+1]),[]) + [words[i+2]]
 
     return chains
 
@@ -72,7 +52,15 @@ def make_chains(text_string):
 def make_text(chains):
     """Return text from chains."""
 
-    words = []
+    text = []
+    dict_len = len(chains)
+    key_pairs = []
+
+    for i in range(len(words)-1):
+        key_pairs.append((words[i], words[i + 1]))
+        
+    num = random.randrange(dict_len)
+
 
     # your code goes here
 
